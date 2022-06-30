@@ -3,13 +3,13 @@ import Purpose from "@/assets/api/purpose.js";
 import { onMounted, watch } from "vue";
 import router from "@/router/index";
 import { onBeforeRouteLeave, onBeforeRouteUpdate } from "vue-router";
-// watch(
-//   () => router.currentRoute.value.path,
-//   (newValue, oldValue) => {
-//     if (newValue === "/kyc") window.location.reload();
-//     // console.log("watch", newValue);
-//   }
-// );
+watch(
+  () => router.currentRoute.value.path,
+  (newValue, oldValue) => {
+    if (newValue === "/kyc") window.location.reload();
+    // console.log("watch", newValue);
+  }
+);
 onMounted(() => {
   Purpose();
 });

@@ -5,13 +5,13 @@ import router from "@/router/index";
 onMounted(() => {
   Home();
 });
-// watch(
-//   () => router.currentRoute.value.path,
-//   (newValue, oldValue) => {
-//     if (newValue === "/") window.location.reload();
-//     // console.log("watch", newValue);
-//   }
-// );
+watch(
+  () => router.currentRoute.value.path,
+  (newValue, oldValue) => {
+    if (newValue === "/") window.location.reload();
+    // console.log("watch", newValue);
+  }
+);
 </script>
 <template>
   <div class="main--container">
