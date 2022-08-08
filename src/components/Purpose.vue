@@ -25,7 +25,7 @@ onMounted(() => {
       <div></div>
     </div>
     <div id="loading-text-intro"><p>Loading</p></div>
-    <img src="/textures/folktech.png" class="folktech" alt="" />
+    <img src="../assets/folk.png" class="folktech" alt="" />
     <div class="main-container" style="visibility: hidden">
       <div class="first">
         <h2>Club</h2>
