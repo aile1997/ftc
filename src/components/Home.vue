@@ -1,72 +1,77 @@
-<script setup lang="ts">
-import Home from "@/assets/api/home.js";
-import { onMounted, watch } from "vue";
-import router from "@/router/index";
+<script setup>
+import { swarmBackground } from "https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js";
+import { onMounted } from "vue";
+
 onMounted(() => {
-  Home();
+  const customCursor = document.querySelector(".cursor");
+  const bg = swarmBackground({
+    el: document.getElementById("apps"),
+    eventsEl: document.body,
+    gpgpuSize: 256,
+    color: [Math.random() * 0xffffff, Math.random() * 0xffffff],
+    geometry: "default",
+  });
+  bg.setColors([12137205.412663601, 4868132.430458719]);
+  bg.three.camera.position.set(0, 0, 200);
+
+  document.body.addEventListener("click", () => {
+    bg.setColors([Math.random() * 0xffffff, Math.random() * 0xffffff]);
+    console.log([Math.random() * 0xffffff, Math.random() * 0xffffff]);
+  });
+
+  document.addEventListener(
+    "mousemove",
+    (event) => {
+      event.preventDefault();
+      handleCursor(event);
+    },
+    false,
+  );
+
+  const handleCursor = (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+    customCursor.style.cssText = `left: ${x}px; top: ${y}px;`;
+  };
 });
-// watch(
-//   () => router.currentRoute.value.path,
-//   (newValue, oldValue) => {
-//     if (newValue === "/") window.location.reload();
-//     // console.log("watch", newValue);
-//   }
-// );
 </script>
 <template>
-  <div class="main--container">
-    <h1 class="main--title">Please fill in KYC carefully</h1>
+  <div id="apps">
+    <div id="hero">
+      <h1>PLEASE<br />WRITE KYC</h1>
+    </div>
   </div>
 </template>
 
 <style scoped>
-body,
-html {
-  margin: 0;
-  padding: 0;
-  /* overscroll-behavior: none; */
+#apps {
   overflow: hidden;
+  touch-action: pan-up;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  text-shadow: 0 0 5px #000000, 0 0 20px #000;
+  user-select: none;
+  height: 100vh;
 }
 
-.main--container {
+#apps h1 {
+  --fontSize: 50px;
+  --lineHeight: 70px;
+  width: auto;
+  height: calc(2 * var(--lineHeight));
+  line-height: var(--lineHeight);
+  margin: calc(50vh - var(--lineHeight)) auto 0;
+  font-size: var(--fontSize);
   position: absolute;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  align-content: center;
-  align-items: center;
-  pointer-events: none;
-  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.main--title {
-  color: white;
-  font-size: 7em;
-  font-family: "Rubik Glitch", cursive;
-  font-weight: 100;
-  margin-left: 10%;
-  width: 510px;
-  line-height: 90px;
-  transform: translateX(30%);
-  opacity: 0;
-  transition: all 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.main--title.ended {
-  transform: translateX(0);
-  opacity: 1;
-  mix-blend-mode: soft-light;
-}
-
-.main--title.ended:after {
-  /* This value is the OPPOSITE color of our background */
-  color: rgb(0, 255, 255);
-}
-
-@media only screen and (max-width: 660px) {
-  .main--title {
-    font-size: 5em;
-    line-height: 0.8em;
-  }
+#apps a {
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
 }
 </style>

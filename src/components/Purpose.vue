@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import Purpose from "@/assets/api/purpose.js";
-import { onMounted, watch } from "vue";
-import router from "@/router/index";
-import { onBeforeRouteLeave, onBeforeRouteUpdate } from "vue-router";
+import { onMounted } from "vue";
 // watch(
 //   () => router.currentRoute.value.path,
 //   (newValue, oldValue) => {
@@ -27,17 +25,15 @@ onMounted(() => {
       <div></div>
     </div>
     <div id="loading-text-intro"><p>Loading</p></div>
+    <img src="/textures/folktech.png" class="folktech" alt="" />
     <div class="main-container" style="visibility: hidden">
       <div class="first">
         <h2>Club</h2>
         <h1>FOLK TECH</h1>
         <p>
-          focktechhello world! Ready to start writing on the mirror It mainly
-          focuses on two aspects: 1. The trading views of crypto secondary
-          market are updated synchronously with TradingView. At present, the TV
-          account has 100+ fans, which are all real people, and there are many
-          old leeks with more than 3-4 years of trading experience. Including
-          but not limited to Gamefi, Socialfi, Web3 and Metaverse
+          focktechhello world! Ready to start writing on the mirror It mainly focuses on two aspects: 1. The trading views of crypto secondary market are
+          updated synchronously with TradingView. At present, the TV account has 100+ fans, which are all real people, and there are many old leeks with more
+          than 3-4 years of trading experience. Including but not limited to Gamefi, Socialfi, Web3 and Metaverse
         </p>
       </div>
 
@@ -49,11 +45,9 @@ onMounted(() => {
             <li id="euphre">Euphre</li>
           </ul>
           <p id="content">
-            She was venerated as the goddess of beauty, splendor, glory,
-            magnificence, and adornment. She is the youngest of the Charites
-            according to Hesiod. Aglaea is one of three daughters of Zeus and
-            either the Oceanid Eurynome, or of Eunomia, the goddess of good
-            order and lawful conduct. we have a beautiful family.
+            She was venerated as the goddess of beauty, splendor, glory, magnificence, and adornment. She is the youngest of the Charites according to Hesiod.
+            Aglaea is one of three daughters of Zeus and either the Oceanid Eurynome, or of Eunomia, the goddess of good order and lawful conduct. we have a
+            beautiful family.
           </p>
         </div>
         <div id="canvas-container-details"></div>
@@ -62,32 +56,19 @@ onMounted(() => {
       <div class="third">
         <h1>Welcome In</h1>
         <p>
-          Hope the family to play together to make money, look at the plate or
-          billing can ⏰· market short term to share ideas, loss of money also
-          timely 📍· thought cliff introspection, more records of their own
-          trading road; You can share your daily life in daily life, and take an
-          active part in dc construction.<br /><br />
-          Juno brother for everyone's transaction all-round service, of course,
-          we also want to jointly protect our Juno brother, let's agree: The
-          information in DC is for the use of shareholders only. Commercial use
-          and leakage are strictly prohibited Any form of soft advertising is
-          prohibited in DC, such as other projects, other organizations without
-          verification
+          Hope the family to play together to make money, look at the plate or billing can ⏰· market short term to share ideas, loss of money also timely 📍·
+          thought cliff introspection, more records of their own trading road; You can share your daily life in daily life, and take an active part in dc
+          construction.<br /><br />
+          Juno brother for everyone's transaction all-round service, of course, we also want to jointly protect our Juno brother, let's agree: The information
+          in DC is for the use of shareholders only. Commercial use and leakage are strictly prohibited Any form of soft advertising is prohibited in DC, such
+          as other projects, other organizations without verification
         </p>
       </div>
       <div id="canvas-container" class="fixed"></div>
       <h4 class="footer">
         Created by Aile based on
-        <a
-          href="https://dribbble.com/shots/6767548-The-Three-Graces-Concept"
-          target="_blank"
-          >Tom Bogner Design</a
-        >.
-        <a
-          href="https://sketchfab.com/3d-models/3d-printable-the-three-graces-58e0ae19e2984b86883edc41bf43415a"
-          target="_blank"
-          >Free model credits</a
-        >
+        <a href="https://dribbble.com/shots/6767548-The-Three-Graces-Concept" target="_blank">Tom Bogner Design</a>.
+        <a href="https://sketchfab.com/3d-models/3d-printable-the-three-graces-58e0ae19e2984b86883edc41bf43415a" target="_blank">Free model credits</a>
       </h4>
     </div>
   </div>
@@ -292,8 +273,8 @@ nav.header .a:hover ~ .cursor {
   width: 100vw;
   margin: 0;
   padding: 0;
-  background: #000;
-  background: radial-gradient(circle at center center, #171717 0, #050505 58%);
+  background: #011738;
+  background: radial-gradient(circle at center center, #011738 0, #070713 58%);
 }
 
 #canvas-container-details {
@@ -427,7 +408,7 @@ nav.header .a:hover ~ .cursor {
   font-weight: lighter;
   margin-top: 50px;
   margin-bottom: 100px;
-  color: #c9c9c996;
+  color: #ffffffe7;
   opacity: 0;
   transition: all 3.9s ease-in-out;
 }
@@ -459,11 +440,8 @@ nav.header .a:hover ~ .cursor {
   flex-direction: column;
   justify-content: center;
   z-index: 2;
-  background: radial-gradient(
-    circle at 90% center,
-    rgba(5, 5, 5, 0) 30%,
-    #141414 70%
-  );
+  background: #011738;
+  background: radial-gradient(circle at center center, #0117385a 0, #07071381 58%);
 }
 
 .second-container > ul {
@@ -512,7 +490,7 @@ nav.header .a:hover ~ .cursor {
   font-family: sans-serif;
   line-height: 24px;
   width: 30%;
-  color: #898989;
+  color: whitesmoke;
   margin-left: 60px;
   height: 200px;
 }
@@ -550,7 +528,7 @@ nav.header .a:hover ~ .cursor {
   font-weight: 100;
   line-height: 28px;
   height: 180px;
-  color: #898989;
+  color: whitesmoke;
 }
 
 .footer {
@@ -637,5 +615,14 @@ nav.header .a:hover ~ .cursor {
   .third > p {
     column-count: 1;
   }
+}
+
+.folktech {
+  position: absolute;
+  width: 10rem;
+  height: 2.5rem;
+  top: 2.5rem;
+  left: 1rem;
+  z-index: 99999;
 }
 </style>

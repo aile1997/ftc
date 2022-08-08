@@ -1,18 +1,7 @@
 /////////////////////////////////////////////////////////////////////////
 ///// IMPORT
 // import "../css/purpose.css";
-import {
-  Clock,
-  Scene,
-  LoadingManager,
-  WebGLRenderer,
-  sRGBEncoding,
-  Group,
-  PerspectiveCamera,
-  DirectionalLight,
-  PointLight,
-  MeshPhongMaterial,
-} from "three";
+import { Clock, Scene, LoadingManager, WebGLRenderer, sRGBEncoding, Group, PerspectiveCamera, DirectionalLight, PointLight, MeshPhongMaterial } from "three";
 import { TWEEN } from "three/examples/jsm/libs/tween.module.min.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
@@ -38,9 +27,7 @@ const Purpose = () => {
         ftsLoader.style.setProperty("opacity", yPosition.op);
       })
       .onComplete(function () {
-        looadingCover.parentNode.removeChild(
-          document.getElementById("loading-text-intro")
-        );
+        looadingCover.parentNode.removeChild(document.getElementById("loading-text-intro"));
         ftsLoader.parentNode.removeChild(ftsLoader);
         TWEEN.remove(this);
       });
@@ -100,15 +87,12 @@ const Purpose = () => {
   scene2.add(cameraGroup);
 
   const camera = new PerspectiveCamera(35, width / height, 1, 100);
-  camera.position.set(19, 1.54, -0.1);
+
+  camera.position.set(0, 2.4, 8.8);
   cameraGroup.add(camera);
 
-  const camera2 = new PerspectiveCamera(
-    35,
-    containerDetails.clientWidth / containerDetails.clientHeight,
-    1,
-    100
-  );
+  const camera2 = new PerspectiveCamera(35, containerDetails.clientWidth / containerDetails.clientHeight, 1, 100);
+
   camera2.position.set(1.9, 2.7, 2.7);
   camera2.rotation.set(0, 1.1, 0);
   scene.add(camera2);
@@ -119,15 +103,11 @@ const Purpose = () => {
     camera.aspect = container.clientWidth / container.clientHeight;
     camera.updateProjectionMatrix();
 
-    camera2.aspect =
-      containerDetails.clientWidth / containerDetails.clientHeight;
+    camera2.aspect = containerDetails.clientWidth / containerDetails.clientHeight;
     camera2.updateProjectionMatrix();
 
     renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer2.setSize(
-      containerDetails.clientWidth,
-      containerDetails.clientHeight
-    );
+    renderer2.setSize(containerDetails.clientWidth, containerDetails.clientHeight);
 
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1));
     renderer2.setPixelRatio(Math.min(window.devicePixelRatio, 1));
@@ -135,13 +115,17 @@ const Purpose = () => {
 
   /////////////////////////////////////////////////////////////////////////
   ///// SCENE LIGHTS
-  const sunLight = new DirectionalLight(0x435c72, 0.08);
-  sunLight.position.set(-100, 0, -100);
+  const sunLight = new PointLight(0x435c72, 1);
+  sunLight.position.set(3, 10, 1.8);
   scene.add(sunLight);
 
-  const sunLight2 = new DirectionalLight(0x435c72, 0.08);
+  const sunLight2 = new DirectionalLight(0x435c72, 0.15);
   sunLight2.position.set(-100, 0, -100);
   scene2.add(sunLight2);
+
+  const sunLight4 = new DirectionalLight(0x435c72, 3);
+  sunLight4.position.set(3, 10, 1.8);
+  scene2.add(sunLight4);
 
   const fillLight = new PointLight(0x88b2d9, 2.7, 4, 3);
   fillLight.position.set(30, 3, 1.8);
@@ -153,16 +137,18 @@ const Purpose = () => {
 
   /////////////////////////////////////////////////////////////////////////
   ///// LOADING GLB/GLTF MODEL FROM BLENDER
-  loader.load("models/gltf/scenecopy.gltf", function (gltf) {
+  loader.load("models/gltf/scene (26).glb", function (gltf) {
     gltf.scene.traverse((obj) => {
-      if (obj.isMesh) {
+      if (obj.material) {
         oldMaterial = obj.material;
         // obj.material = new MeshPhongMaterial({
         //   shininess: 45,
         // });
       }
     });
-    gltf.scene.scale.set(0.25, 0.25, 0.25);
+    gltf.scene.scale.set(1.5, 1.5, 1.5);
+    gltf.scene.position.y = gltf.scene.position.y + 3;
+    gltf.scene.rotateX(Math.PI / 4);
     scene.add(gltf.scene);
     clearScene();
   });
@@ -188,8 +174,8 @@ const Purpose = () => {
   /////////////////////////////////////////////////////////////////////////
   //// INTRO CAMERA ANIMATION USING TWEEN
   function introAnimation() {
-    new TWEEN.Tween(camera.position.set(0, 4, 2.7))
-      .to({ x: 0, y: 2.4, z: 8.8 }, 2500)
+    new TWEEN.Tween(camera.position.set(0, 2.4, 15))
+      .to({ x: 0, y: 2.4, z: 8.8 }, 1000)
       .easing(TWEEN.Easing.Quadratic.InOut)
       .start()
       .onComplete(function () {
@@ -270,21 +256,15 @@ const Purpose = () => {
     previousTime = elapsedTime;
 
     const parallaxY = cursor.y;
-    fillLight.position.y -=
-      (parallaxY * 9 + fillLight.position.y - 2) * deltaTime;
-    fillLight2.position.y -=
-      (parallaxY * 9 + fillLight2.position.y - 2) * deltaTime;
+    fillLight.position.y -= (parallaxY * 9 + fillLight.position.y - 2) * deltaTime;
+    fillLight2.position.y -= (parallaxY * 9 + fillLight2.position.y - 2) * deltaTime;
 
     const parallaxX = cursor.x;
-    fillLight.position.x +=
-      (parallaxX * 8 - fillLight.position.x) * 2 * deltaTime;
-    fillLight2.position.x +=
-      (parallaxX * 8 - fillLight2.position.x) * 2 * deltaTime;
+    fillLight.position.x += (parallaxX * 8 - fillLight.position.x) * 2 * deltaTime;
+    fillLight2.position.x += (parallaxX * 8 - fillLight2.position.x) * 2 * deltaTime;
 
-    cameraGroup.position.z -=
-      (parallaxY / 3 + cameraGroup.position.z) * 2 * deltaTime;
-    cameraGroup.position.x +=
-      (parallaxX / 3 - cameraGroup.position.x) * 2 * deltaTime;
+    cameraGroup.position.z -= (parallaxY / 3 + cameraGroup.position.z) * 2 * deltaTime;
+    cameraGroup.position.x += (parallaxX / 3 - cameraGroup.position.x) * 2 * deltaTime;
 
     requestAnimationFrame(rendeLoop);
   }
@@ -303,7 +283,7 @@ const Purpose = () => {
 
       handleCursor(event);
     },
-    false
+    false,
   );
 
   //////////////////////////////////////////////////
