@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from offscreencanvas.com/about/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 15 Aug 2022 02:53:03 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
+<head>
+  <meta charset="utf-8">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link rel="preload" href="../../use.typekit.net/chx8uvk.css" as="style">
+  <link rel="preload" href="../app.css" as="style">
+  <link rel="preload" href="../fonts/test-1/Thunder-BoldLC.ttf" as="font" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../../use.typekit.net/chx8uvk.css" />
+  <link rel="stylesheet" href="../app.css">
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+  <title>About</title>
+  <meta name="description"
+    content="Made for devs of all levels who are curious about what kind of cool webgl exist, the gist of how it works, and where to dig deeper." />
+  <link rel="canonical" href=index.html>
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:title" content="About" />
+  <meta property="og:url" content="/about/" />
+  <meta property="og:description"
+    content="Made for devs of all levels who are curious about what kind of cool webgl exist, the gist of how it works, and where to dig deeper." />
+  <meta property="og:image" content="../images/cover.png" />
+  <meta property="og:type" content="article" />
+
+  <meta name="twitter:title" content="About">
+  <meta name="twitter:description"
+    content="Made for devs of all levels who are curious about what kind of cool webgl exist, the gist of how it works, and where to dig deeper.">
+  <meta name="twitter:image" content="../images/cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Fathom - beautiful, simple website analytics -->
+  <script src="../../cdn.usefathom.com/script.js" data-site="MYUFSZPR" defer></script>
+  <!-- / Fathom -->
+  <script>
+    (function (w, d, t, h, s, n) {
+      w.FlodeskObject = n;
+      var fn = function () {
+        (w[n].q = w[n].q || []).push(arguments);
+      };
+      w[n] = w[n] || fn;
+      var f = d.getElementsByTagName(t)[0];
+      var v = '?v=' + Math.floor(new Date().getTime() / (120 * 1000)) * 60;
+      var sm = d.createElement(t);
+      sm.async = true;
+      sm.type = 'module';
+      sm.src = h + s + '.mjs' + v;
+      f.parentNode.insertBefore(sm, f);
+      var sn = d.createElement(t);
+      sn.async = true;
+      sn.noModule = true;
+      sn.src = h + s + '.js' + v;
+      f.parentNode.insertBefore(sn, f);
+    })(window, document, 'script', 'https://assets.flodesk.com/', '/universal', 'fd');
+  </script>
+</head>
+
+<body>
+
+  <script>
+
+    let palettes = [
+      {
+        bg: "#100F10",
+        text: "#FFFFFF",
+        textInactive: "#6d6d6d",
+        textHover: "#cccccc",
+        bgLight: '#2a282a',
+        id: 'black',
+        index: 0,
+      },
+      {
+        bg: "#DB7676",
+        text: "#F0DEDE",
+        textInactive: "#ce7272",
+        textHover: "#e1acac",
+        bgLight: '#d55f5f',
+        id: 'pink',
+        index: 1,
+      },
+      {
+        bg: "#7FB9BC",
+        text: "#FFFFFF",
+        textInactive: "#7eaeb1",
+        textHover: "#b5d6d8",
+        bgLight: '#66a2a5',
+        id: "aquamarine",
+        index: 2,
+        // #9bc3c5 #b5d6d8
+      },
+      {
+        bg: "#5963FA",
+        text: "#F6F6F4",
+        textInactive: "#4b52c5",
+        textHover: "#9ea3f9",
+        bgLight: '#424bd3',
+        id: 'blue',
+        index: 3,
+      },
+      {
+        bg: "#446091",
+        text: "#E7E6E4",
+        textInactive: "#3d557d",
+        textHover: "#869cc2",
+        bgLight: '#2c4570',
+        id: 'darkblue',
+        index: 4,
+      },
+      {
+        bg: "#EBEBEB",
+        text: "#122438",
+        textInactive: "#7c8598",
+        textHover: "#193758",
+        bgLight: '#bcc2c9',
+        id: 'grey',
+        index: 5,
+      },
+      {
+        bg: "#FFFFFF",
+        text: "#000000",
+        textInactive: "#8d8d8d",
+        textHover: "#333333",
+        bgLight: '#dfdfdf',
+        id: 'white',
+        index: 6,
+      },
+      {
+        bg: "#f5e1ce",
+        text: "#F04924",
+        textInactive: "#ebaf92",
+        textHover: "#fd6e4e",
+        bgLight: '#f1d7c0',
+        id: 'orange',
+        index: 7,
+      },
+    ];
+
+
+    let colorMode = window.localStorage.getItem('color-mode')
+
+    if (colorMode != null) {
+      let palette = palettes[colorMode];
+
+      let root = document.documentElement;
+
+      root.style.setProperty("--bg", palette.bg);
+      root.style.setProperty("--color", palette.text);
+      root.style.setProperty("--colorInactive", palette.textInactive);
+      root.style.setProperty("--colorHover", palette.textHover);
+      root.style.setProperty("--bgLight", palette.bgLight);
+
+    }
+
+
+  </script>
+  <div style="display: none;" id="fd-form-620cc721e0eda1a0d870af34"></div>
+  <script>
+    window.fd('form', {
+      formId: '620cc721e0eda1a0d870af34',
+      containerEl: '#fd-form-620cc721e0eda1a0d870af34'
+    });
+  </script>
+  <div id="cursor">
+    <svg height="200" width="200">
+      <g id="cursor-wrapper--small">
+        <circle id="cursor--small" cx="100" cy="100" r="10" stroke-width="2"></circle>
+      </g>
+      <circle id="cursor--big" cx="100" cy="100" r="10" stroke-width="0"></circle>
+    </svg>
+  </div>
+  <div id="root">
+    <div id='app-wrapper'>
+      <canvas id="app-canvas"></canvas>
+    </div>
+    <nav class="nav paddingWrapper">
+      <a href="../index.html">
+        <h1 class="logo">FOLKTECH<br />CLUB</h1>
+      </a>
+      <ul class="nav-links">
+        <a href='../renders/004/index.html' target="blank" class="nav-link">
+          <li>CLUB</li>
+        </a>
+        <a href='https://folktech.typlog.io/' target="block" class="nav-link" data-transition="issueListTransition">
+          <li>BOLG</li>
+        </a>
+        <a href="index.html" target="blank" class="nav-link is-active">
+          <li>About</li>
+        </a>
+      </ul>
+
+      <button class="mobileButton mobileMenu-button h5">Menu</button>
+    </nav>
+    <main data-router-wrapper>
+
+
+      <article data-router-view="about" class="about paddingWrapper">
+        <div class='about-info content'>
+          <div class='about-info-wrapper'>
+            <p class='about-text'>FolkTech Club was founded in the early days of Juno's Youtube live broadcast, in order
+              to give back the support of the early hardcore fans and to facilitate communication.
+              </br>
+              </br>
+              FolkTech Club is neither a DAO, nor a community in the traditional sense. It is just a Family where Juno's
+              fans share their trading experience and fun life around signal strategies.</p>
+
+            <ul class="aboutLinks">
+              <li class='aboutLinks-item'><a href="https://twitter.com/bcyyzzzm13" target="_blank">Twitter</a></li>
+
+            </ul>
+          </div>
+          <div>
+            <form class="signup  signup--full ">
+            </form>
+          </div>
+        </div>
+      </article>
+    </main>
+    <div class="palette-list palette-list--left">
+      <button class="palette-item" data-palette="0" style="background-color: #1d1c1d"></button>
+      <button class="palette-item" data-palette="1" style="background-color: #db7676"></button>
+      <button class="palette-item" data-palette="2" style="background-color: #7fb9bc"></button>
+      <button class="palette-item" data-palette="3" style="background-color: #5963fa"></button>
+    </div>
+    <div class="palette-list palette-list--right">
+      <!-- <button class="palette-item" data-palette="4" style="background-color: #446091"></button>
+      <button class="palette-item" data-palette="5" style="background-color: #ebebeb"></button>
+      <button class="palette-item" data-palette="6" style="background-color: #ffffff"></button>
+      <button class="palette-item" data-palette="7" style="background-color: #F04924"></button> -->
+    </div>
+    <div class="mobileMenu">
+      <div class="mobileMenu-inner">
+        <ul class="mobileMenu-links">
+          <a class="mobileMenu-link" target="blank" href='../renders/004/index.html'>
+            <li>CLUB</li>
+          </a>
+          <a class="mobileMenu-link" target="blank" href='https://folktech.typlog.io/'>
+            <li>BOLG</li>
+          </a>
+          <a class="mobileMenu-link" target="blank" href="index.html">
+            <li>About</li>
+          </a>
+        </ul>
+        <div class="mobileMenu-social">
+          <a class="nav-link" target="blank" href="https://twitter.com/Anemolito">Twitter</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="transitionWrapper">
+  </div>
+
+
+
+
+  <script src="../index.js"></script>
+</body>
+
+<!-- Mirrored from offscreencanvas.com/about/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 15 Aug 2022 02:53:04 GMT -->
+
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from offscreencanvas.com/renders/004/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 15 Aug 2022 02:52:53 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
+<head>
+  <meta charset="utf-8">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link rel="preload" href="../../../use.typekit.net/chx8uvk.css" as="style">
+  <link rel="preload" href="../../app.css" as="style">
+  <link rel="preload" href="../../fonts/test-1/Thunder-BoldLC.ttf" as="font" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../../../use.typekit.net/chx8uvk.css" />
+  <link rel="stylesheet" href="../../app.css">
+  <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
+  <title>FOLKTECH CLUB</title>
+  <meta name="description" content="A vector field pulling color around." />
+  <link rel="canonical" href=index.html>
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:title" content="FOLKTECH CLUB" />
+  <meta property="og:url" content="/renders/004/" />
+  <meta property="og:description" content="A vector field pulling color around." />
+  <meta property="og:image" content="../../images/issues/004/metaImage.png" />
+  <meta property="og:type" content="article" />
+
+  <meta name="twitter:title" content="FOLKTECH CLUB">
+  <meta name="twitter:description" content="A vector field pulling color around.">
+  <meta name="twitter:image" content="../../images/issues/004/metaImage.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Fathom - beautiful, simple website analytics -->
+  <script src="../../../cdn.usefathom.com/script.js" data-site="MYUFSZPR" defer></script>
+  <!-- / Fathom -->
+  <script>
+    (function (w, d, t, h, s, n) {
+      w.FlodeskObject = n;
+      var fn = function () {
+        (w[n].q = w[n].q || []).push(arguments);
+      };
+      w[n] = w[n] || fn;
+      var f = d.getElementsByTagName(t)[0];
+      var v = '?v=' + Math.floor(new Date().getTime() / (120 * 1000)) * 60;
+      var sm = d.createElement(t);
+      sm.async = true;
+      sm.type = 'module';
+      sm.src = h + s + '.mjs' + v;
+      f.parentNode.insertBefore(sm, f);
+      var sn = d.createElement(t);
+      sn.async = true;
+      sn.noModule = true;
+      sn.src = h + s + '.js' + v;
+      f.parentNode.insertBefore(sn, f);
+    })(window, document, 'script', 'https://assets.flodesk.com/', '/universal', 'fd');
+  </script>
+</head>
+
+<body>
+
+  <script>
+
+    let palettes = [
+      {
+        bg: "#100F10",
+        text: "#FFFFFF",
+        textInactive: "#6d6d6d",
+        textHover: "#cccccc",
+        bgLight: '#2a282a',
+        id: 'black',
+        index: 0,
+      },
+      {
+        bg: "#DB7676",
+        text: "#F0DEDE",
+        textInactive: "#ce7272",
+        textHover: "#e1acac",
+        bgLight: '#d55f5f',
+        id: 'pink',
+        index: 1,
+      },
+      {
+        bg: "#7FB9BC",
+        text: "#FFFFFF",
+        textInactive: "#7eaeb1",
+        textHover: "#b5d6d8",
+        bgLight: '#66a2a5',
+        id: "aquamarine",
+        index: 2,
+        // #9bc3c5 #b5d6d8
+      },
+      {
+        bg: "#5963FA",
+        text: "#F6F6F4",
+        textInactive: "#4b52c5",
+        textHover: "#9ea3f9",
+        bgLight: '#424bd3',
+        id: 'blue',
+        index: 3,
+      },
+      {
+        bg: "#446091",
+        text: "#E7E6E4",
+        textInactive: "#3d557d",
+        textHover: "#869cc2",
+        bgLight: '#2c4570',
+        id: 'darkblue',
+        index: 4,
+      },
+      {
+        bg: "#EBEBEB",
+        text: "#122438",
+        textInactive: "#7c8598",
+        textHover: "#193758",
+        bgLight: '#bcc2c9',
+        id: 'grey',
+        index: 5,
+      },
+      {
+        bg: "#FFFFFF",
+        text: "#000000",
+        textInactive: "#8d8d8d",
+        textHover: "#333333",
+        bgLight: '#dfdfdf',
+        id: 'white',
+        index: 6,
+      },
+      {
+        bg: "#f5e1ce",
+        text: "#F04924",
+        textInactive: "#ebaf92",
+        textHover: "#fd6e4e",
+        bgLight: '#f1d7c0',
+        id: 'orange',
+        index: 7,
+      },
+    ];
+
+
+    let colorMode = window.localStorage.getItem('color-mode')
+
+    if (colorMode != null) {
+      let palette = palettes[colorMode];
+
+      let root = document.documentElement;
+
+      root.style.setProperty("--bg", palette.bg);
+      root.style.setProperty("--color", palette.text);
+      root.style.setProperty("--colorInactive", palette.textInactive);
+      root.style.setProperty("--colorHover", palette.textHover);
+      root.style.setProperty("--bgLight", palette.bgLight);
+
+    }
+
+
+  </script>
+  <div style="display: none;" id="fd-form-620cc721e0eda1a0d870af34"></div>
+  <script>
+    window.fd('form', {
+      formId: '620cc721e0eda1a0d870af34',
+      containerEl: '#fd-form-620cc721e0eda1a0d870af34'
+    });
+  </script>
+  <div id="cursor">
+    <svg height="200" width="200">
+      <g id="cursor-wrapper--small">
+        <circle id="cursor--small" cx="100" cy="100" r="10" stroke-width="2"></circle>
+      </g>
+      <circle id="cursor--big" cx="100" cy="100" r="10" stroke-width="0"></circle>
+    </svg>
+  </div>
+  <div id="root">
+    <div id='app-wrapper'>
+      <canvas id="app-canvas"></canvas>
+    </div>
+    <nav class="nav paddingWrapper">
+      <a href="../../index.html">
+        <h1 class="logo">FOLKTECH<br />CLUB</h1>
+      </a>
+
+
+      <ul class="nav-links">
+        <a href='../renders/004/index.html' target="blank" class="nav-link is-active">
+          <li>CLUB</li>
+        </a>
+        <a href='https://folktech.typlog.io/' target="block" class="nav-link" data-transition="issueListTransition">
+          <li>BOLG</li>
+        </a>
+        <a href="../../about/index.html" target="blank" class="nav-link">
+          <li>About</li>
+        </a>
+      </ul>
+      <button class="mobileButton mobileMenu-button h5">Menu</button>
+    </nav>
+    <main data-router-wrapper>
+
+
+
+
+
+
+
+
+      <div data-router-view="render" class='render paddingWrapper'>
+
+
+        <div class='render-loading'>
+          <p>LOADING</p>
+        </div>
+        <div class='renderInfo'>
+          <div class="renderInfo-titles">
+            <h5 class="render-subtitle">Great men are not born great, they grow great.</h5>
+            <h2 class="render-title"><span class='split-word'><span class=split-letter><span
+                    style=transition-delay:0ms>C</span></span><span class=split-letter><span
+                    style=transition-delay:10ms>R</span></span><span class=split-letter><span
+                    style=transition-delay:20ms>Y</span></span><span class=split-letter><span
+                    style=transition-delay:30ms>P</span></span><span class=split-letter><span
+                    style=transition-delay:40ms>T</span></span><span class=split-letter><span
+                    style=transition-delay:50ms>O</span></span><span class=split-letter><span
+                    style=transition-delay:60ms>,</span></span><span class=split-letter><span
+                    style=transition-delay:70ms></span></span><span class=split-letter space><span
+                    style=transition-delay:80ms> </span></span></span><span class='split-word'><span
+                  class=split-letter><span style=transition-delay:90ms>A</span></span><span class=split-letter><span
+                    style=transition-delay:100ms>L</span></span><span class=split-letter><span
+                    style=transition-delay:110ms>G</span></span><span class=split-letter><span
+                    style=transition-delay:120ms>O</span></span><span class=split-letter><span
+                    style=transition-delay:130ms>R</span></span><span class=split-letter space><span
+                    style=transition-delay:140ms>I</span></span></span><span class='split-word'><span
+                  class=split-letter><span style=transition-delay:150ms>T</span></span><span class=split-letter><span
+                    style=transition-delay:160ms>H</span></span><span class=split-letter><span
+                    style=transition-delay:170ms>M</span></span><span class=split-letter space><span
+                    style=transition-delay:180ms> </span></span></span><span class='split-word'><span
+                  class=split-letter><span style=transition-delay:190ms>A</span></span><span class=split-letter><span
+                    style=transition-delay:200ms>N</span></span><span class=split-letter><span
+                    style=transition-delay:210ms>D</span></span><span class=split-letter><span
+                    style=transition-delay:220ms> </span></span><span class=split-letter><span
+                    style=transition-delay:230ms>L</span></span><span class=split-letter><span
+                    style=transition-delay:240ms>O</span></span></span><span class=split-letter><span
+                  style=transition-delay:230ms>V</span></span><span class=split-letter><span
+                  style=transition-delay:230ms>E</span></span><span class=split-letter><span
+                  style=transition-delay:230ms>.</span></span></h2>
+          </div>
+
+
+        </div>
+
+        <div class="controls">
+          <div class="controls-overflow">
+            <div class="controls-inner">
+              <button class="openControls">Close controls
+                <div class="openControls-arrowWrapper">
+                  <svg class="arrow openControls-arrow openControls-arrow--flipped" xmlns="http://www.w3.org/2000/svg"
+                    width="10" height="5" viewBox="0 0 10 5">
+                    <path id="Path_43" data-name="Path 43" d="M0,0h10l-5,5Z" />
+                  </svg>
+                </div>
+
+              </button>
+              <div class="controls-quality">
+                <h5 class='reversed controls-title'>Quality</h5>
+                <div class='quality-radios reversed'>
+                  <div class="radio-wrapper">
+                    <label class="radio-label reversed" class="reversed" for="quality-low">
+                      <input class="radio-input" type="radio" id="quality-low" name="quality" value="0" checked />
+                      <span class='radio-circle'></span>
+                      Low</label>
+                  </div>
+                  <div class="radio-wrapper">
+                    <label class="radio-label reversed" class="reversed" for="quality-medium">
+                      <input class="radio-input" type="radio" id="quality-medium" name="quality" value="1" checked />
+                      <span class='radio-circle'></span>
+                      medium</label>
+                  </div>
+                  <div class="radio-wrapper">
+                    <label class="radio-label reversed" class="reversed" for="quality-high">
+                      <input class="radio-input" type="radio" id="quality-high" name="quality" value="2" checked />
+                      <span class='radio-circle'></span>
+
+                      high</label>
+                  </div>
+                </div>
+              </div>
+              <div class="controls-options">
+                <h5 class='reversed controls-title'>Controls</h5>
+                <p class="reversed">Nothing to see here yet~</p>
+              </div>
+              <div class='controlsSignup'>
+                <h5 class='reversed controls-title'>get source code by subscribing</h5>
+                <form class="signup signup--reversed signup--full ">
+
+                  <input class='signup-input' placeholder="Email" type="email" name="email" data-ff-tab="email::submit"
+                    required />
+                  <button class='btn signup-button' type='submit' data-ff-el="submit" data-ff-tab="submit">
+
+                    subscribe
+                  </button>
+                  <p class="signup-info signup-success">Congratz! I've sent you an email to confirm your subscription!
+                  </p>
+                  <p class="signup-info signup-invalidEmail">Uh oh, your email seems to be invalid.</p>
+                  <p class="signup-info signup-alreadySubscribed">You were already subscribed to the newsletter!</p>
+                  <p class="signup-info signup-error">Uh oh, something went wrong. <a class="external-link"
+                      href="https://view.flodesk.com/pages/620ccf1fe0eda1a0d870af46">Try subscribing here!</a> </p>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="issueUI">
+          <h3 class="issueUI-index"></h3>
+
+        </div>
+
+
+        <script id="current-render-script" class='render-script' async data-index=004 src="index.js"></script>
+      </div>
+    </main>
+    <div class="palette-list palette-list--left">
+      <button class="palette-item" data-palette="0" style="background-color: #1d1c1d"></button>
+      <button class="palette-item" data-palette="1" style="background-color: #db7676"></button>
+      <button class="palette-item" data-palette="2" style="background-color: #7fb9bc"></button>
+      <button class="palette-item" data-palette="3" style="background-color: #5963fa"></button>
+    </div>
+    <div class="palette-list palette-list--right">
+      <!-- <button class="palette-item" data-palette="4" style="background-color: #446091"></button>
+      <button class="palette-item" data-palette="5" style="background-color: #ebebeb"></button>
+      <button class="palette-item" data-palette="6" style="background-color: #ffffff"></button>
+      <button class="palette-item" data-palette="7" style="background-color: #F04924"></button> -->
+    </div>
+    <div class="mobileMenu">
+      <div class="mobileMenu-inner">
+        <ul class="mobileMenu-links">
+          <a class="mobileMenu-link" target="blank" href="../renders/004/index.html">
+            <li>CLUB</li>
+          </a>
+          <a class="mobileMenu-link" target="blank" href="https://folktech.typlog.io/">
+            <li>BOLG</li>
+          </a>
+          <a class="mobileMenu-link" target="blank" href="../../about/index.html">
+            <li>About</li>
+          </a>
+        </ul>
+        <div class="mobileMenu-social">
+          <a class="nav-link" target="blank" href="https://twitter.com/Anemolito">Twitter</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="transitionWrapper">
+  </div>
+
+
+
+
+  <script src="../../index.js"></script>
+</body>
+
+<!-- Mirrored from offscreencanvas.com/renders/004/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 15 Aug 2022 02:53:03 GMT -->
+
+</html>
